@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Habit Tracker • Daily + Weekly + Supplements</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="app-header">
+  <h1>✅ Habit Tracker — Daily • Weekly • Supplements</h1>
+  <nav class="tabs">
+    <button class="tab active" data-page="daily">Daily</button>
+    <button class="="tab" data-page="weekly">Weekly Plan</button>
+    <button class="tab" data-page="supps">Supplements</button>
+    <button class="tab" data-page="snapshot">Weekly Snapshot</button>
+  </nav>
+</header>
+
+<main class="container">
+  <!-- DAILY -->
+  <section id="page-daily" class="page">
+    <div class="card">
+      <div class="card-head">
+        <h2>📆 Daily Routine Timeline</h2>
+        <div class="actions">
+          <button id="btnDailyToday" class="btn">Today</button>
+          <input id="dailyDate" type="date" />
+          <button id="btnDailyReset" class="btn warn">Reset Day</button>
+        </div>
+      </div>
+      <table class="table" id="dailyTable">
+        <thead>
+          <tr><th>Time</th><th>Action</th><th>Details / Supplements</th><th>Done</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="helper tiny">Checking items saves to this specific date. Your progress is stored locally on this device.</div>
+    </div>
+  </section>
+
+  <!-- WEEKLY PLAN -->
+  <section id="page-weekly" class="page" hidden>
+    <div class="card">
+      <div class="card-head">
+        <h2>🏋️ Weekly Training & Cardio</h2>
+        <div class="actions">
+          <button id="btnWeekThis" class="btn">This Week</button>
+          <button id="btnWeekPrev" class="btn">&larr; Prev</button>
+          <button id="btnWeekNext" class="btn">Next &rarr;</button>
+          <button id="btnWeekReset" class="btn warn">Reset Week</button>
+          <span id="weekLabel" class="badge"></span>
+        </div>
+      </div>
+      <table class="table" id="weeklyTable">
+        <thead>
+          <tr><th>Day</th><th>Date</th><th>Focus</th><th>Workout</th><th>Cardio</th><th>Workout Done</th><th>Cardio Done</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="helper tiny">Tracks Monday–Sunday. Progress is keyed to the week.</div>
+    </div>
+  </section>
+
+  <!-- SUPPLEMENTS -->
+  <section id="page-supps" class="page" hidden>
+    <div class="card">
+      <div class="card-head">
+        <h2>⚙️ Supplement Recap</h2>
+        <div class="actions">
+          <button id="btnSuppsToday" class="btn">Today</button>
+          <input id="suppsDate" type="date" />
+          <button id="btnSuppsReset" class="btn warn">Reset Day</button>
+        </div>
+      </div>
+      <table class="table" id="suppsTable">
+        <thead>
+          <tr><th>Supplement</th><th>Dose</th><th>Timing</th><th>Purpose</th><th>Taken</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="helper tiny">This is a quick checklist for today's intake. Use the Daily tab for time-specific steps.</div>
+    </div>
+  </section>
+
+  <!-- WEEKLY SNAPSHOT -->
+  <section id="page-snapshot" class="page" hidden>
+    <div class="card">
+      <div class="card-head">
+        <h2>📅 Weekly Overview Snapshot</h2>
+        <div class="actions">
+          <button id="btnSnapThis" class="btn">This Week</button>
+          <button id="btnSnapPrev" class="btn">&larr; Prev</button>
+          <button id="btnSnapNext" class="btn">Next &rarr;</button>
+          <button id="btnSnapReset" class="btn warn">Reset Week</button>
+          <span id="snapWeekLabel" class="badge"></span>
+        </div>
+      </div>
+      <table class="table" id="snapshotTable">
+        <thead>
+          <tr><th>Day</th><th>Date</th><th>Wake</th><th>Train</th><th>Work</th><th>Sleep</th><th>Notes</th><th>Complete</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="helper tiny">Notes & completion are saved per week (Mon–Sun).</div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer tiny">Local storage only • No sign-in • Works offline if saved to your device</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
